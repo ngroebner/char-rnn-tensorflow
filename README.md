@@ -8,7 +8,7 @@ Forked from Sherjil Ozair's [char-rnn-tensorflow](https://github.com/sherjilozai
 - [Tensorflow 1.0](http://www.tensorflow.org)
 
 ## Concept
-Based on multiple Janelle Shane's use of RNN's to generate new names for multiple types of products (e.g. such as [beer](http://gizmodo.com/weve-run-out-of-beer-names-and-ai-is-here-to-help-1797480178] and [metal bands](http://gizmodo.com/here-s-what-happened-when-computers-tried-naming-metal-1795538443) )
+Based on Janelle Shane's use of RNN's to generate new names for multiple types of products (e.g. such as [beer](http://gizmodo.com/weve-run-out-of-beer-names-and-ai-is-here-to-help-1797480178] and [metal bands](http://gizmodo.com/here-s-what-happened-when-computers-tried-naming-metal-1795538443) )
 ## Basic Usage
 Train on a list of ~1000 disease names scraped from the [CDC's Diseases and Conditions](https://www.cdc.gov/diseasesconditions/) page:
 
