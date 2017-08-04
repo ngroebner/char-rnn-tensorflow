@@ -1,55 +1,70 @@
-char-rnn-tensorflow
+char-rnn-tensorflow-disease-generator
 ===
+Generates new disease names using recurrent neural networks.
 
-[![Join the chat at https://gitter.im/char-rnn-tensorflow/Lobby](https://badges.gitter.im/char-rnn-tensorflow/Lobby.svg)](https://gitter.im/char-rnn-tensorflow/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Coverage Status](https://coveralls.io/repos/github/sherjilozair/char-rnn-tensorflow/badge.svg)](https://coveralls.io/github/sherjilozair/char-rnn-tensorflow)
-[![Build Status](https://travis-ci.org/sherjilozair/char-rnn-tensorflow.svg?branch=master)](https://travis-ci.org/sherjilozair/char-rnn-tensorflow)
-
-Multi-layer Recurrent Neural Networks (LSTM, RNN) for character-level language models in Python using Tensorflow.
-
-Inspired from Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn).
+Forked from Sherjil Ozair's [char-rnn-tensorflow](https://github.com/sherjilozair/char-rnn-tensorflow) which was in turn inspired by Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn).
 
 ## Requirements
 - [Tensorflow 1.0](http://www.tensorflow.org)
 
+## Concept
+Based on multiple Janelle Shane's use of RNN's to generate new names for multiple types of products (e.g. such as [beer](http://gizmodo.com/weve-run-out-of-beer-names-and-ai-is-here-to-help-1797480178] and [metal bands](http://gizmodo.com/here-s-what-happened-when-computers-tried-naming-metal-1795538443) )
 ## Basic Usage
-To train with default parameters on the tinyshakespeare corpus, run `python train.py`. To access all the parameters use `python train.py --help`.
+Train on a list of ~1000 disease names scraped from the [CDC's Diseases and Conditions](https://www.cdc.gov/diseasesconditions/) page:
+
+python train.py
 
 To sample from a checkpointed model, `python sample.py`.
 
-## Datasets
-You can use any plain text file as input. For example you could download [The complete Sherlock Holmes](https://sherlock-holm.es/ascii/) as such:
+Here are some of my favorites, trained with a variety of hyperparameters.
 
-```bash
-cd data
-mkdir sherlock
-cd sherlock
-wget https://sherlock-holm.es/stories/plain-text/cnus.txt
-mv cnus.txt input.txt
-```
+- Henorphy Sistes
+- Menutinia — see Naspilmonakis Incatinal Proasossa Infection
+- fempoora — see Spinges
+- Groopent, Health
+- perpacter Farterosis
+- Imberlossis croubocrocustem frumllossomic viruves
+- Angi peli Infection
+- Grouplas Disease
+- Batobacteria fever (ADm)
+- Genis
+- Shammition
+- Pse pee — see Anisalia virus fervic Fraet. see also Restipatomoficu Infection]
+- SkV, Pagillosoma dinease
+- Lumphagic tupboclosis (Chorcanc Ercucilation — see Spolirmien-hygina diseasee)
+- Vinus and Meat Disease
+- Lockworm Virus 
+- Deat Lutaticationaty (ILS)
+- Group A Disease Toxoravirus Infection
+- Ovisal Cancer
+- Mydoma Infection
+- Mubic Cholepiasis
+- Thrhama Disease and Rastric Bats, Cexilness 
+- Chronic Caplitimexiosis
+- Hebomitis — see B Cromen
+- Puping Pumjo Fever
+- Fancers Vaccination
+- Pulst Epesita Cancer 
+- Herpes, Areaterial Death Disorders
+- Black Vingilla B disis
+- Fengillaris
+- Mibringiosis
+- Kernectaliticar Disease
 
-Then start train from the top level directory using `python train.py --data_dir=./data/sherlock/`
 
-A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`
+And this is raw output from a run of 100 epochs with default parameters:
 
-## Tensorboard
-To visualize training progress, model graphs, and internal state histograms:  fire up Tensorboard and point it at your `log_dir`.  E.g.:
-```bash
-$ tensorboard --logdir=./logs/
-```
+-  neallobacites
+- Dickethir Heatted Hemorrhail fevirus [VRP)
+- Varialla Health Pastemia — see Sepsisis — see Harstems and Workforce Development (DPF) [Varichllobkere Infection]
+- Perichory Amey Infection]
+- Glostrommal Pasinella Infection — see Choluraty Vaccination
+- Trictostisis, Fecapleagosy Syndrome (CDR)
+- Traumagia Disporla Infection]
+- Chickren
+- Vaginal and Insatt, humaly Syndrome)
+- CEV Infection
+- Afrian) Puldobacil-Ascoila — see Emergobenthurita (MAF)
+- Asistaphyate Meliotoskis Mancepation
+- Orviunlal Resistan
 
-Then open a browser to [http://localhost:6006](http://localhost:6006) or the correct IP/Port specified.
-
-
-## Roadmap
-- [ ] Add explanatory comments
-- [ ] Expose more command-line arguments
-- [ ] Compare accuracy and performance with char-rnn
-- [ ] More Tensorboard instrumentation
-
-## Contributing
-Please feel free to:
-* Leave feedback in the issues
-* Open a Pull Request
-* Join the [gittr chat](https://gitter.im/char-rnn-tensorflow/Lobby)
-* Share your success stories and data sets!
